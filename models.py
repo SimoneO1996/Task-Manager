@@ -8,7 +8,7 @@ class TaskStatus(str, Enum):
     DONE = "done"
 
 class Task(BaseModel):
-    id: Optional[int] = None
+    id: Optional[str] = None
     title: str
     description: Optional[str] = None
     status: TaskStatus = TaskStatus.TODO
