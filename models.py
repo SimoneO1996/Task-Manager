@@ -13,7 +13,7 @@ class Task(BaseModel):
     description: Optional[str] = None
     status: TaskStatus = TaskStatus.TODO
 
-class TaskCreate(BaseModel):
+class CreateTaskRequest(BaseModel):
     title: str
     description: Optional[str] = None
     status: TaskStatus = TaskStatus.TODO
