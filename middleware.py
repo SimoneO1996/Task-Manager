@@ -21,6 +21,5 @@ def setup_logging_middleware(app: FastAPI):
         #Quando ha finito, la risposta è salvata in response.
         response = await call_next(request) 
         ms = round((time.time() - start) * 1000, 2) #calcolo tempo impiegato
-        logger.info(f"← {response.status_code} {request.url.path} [{ms}ms]") #riscrive
-        #nel log l'uscita   
+        logger.info(f"← {response.status_code} {request.url.path} [{ms}ms]") #riscrive nel log l'uscita 
         return response #return nella funzione middleware la response
