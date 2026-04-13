@@ -6,6 +6,12 @@ from fastapi import FastAPI, Request
 # È un decorator, come @app.get("/health") 
 # ma invece di un endpoint registra un middleware.
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
+
 def setup_logging_middleware(app: FastAPI):
     @app.middleware("http")
     async def log_requests(request: Request, call_next):
